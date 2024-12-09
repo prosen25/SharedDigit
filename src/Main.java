@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
+        System.out.println(hasSharedDigit(12, 13));
         System.out.println(hasSharedDigit(12, 23));
         System.out.println(hasSharedDigit(9, 99));
         System.out.println(hasSharedDigit(15, 55));
@@ -15,11 +16,13 @@ public class Main {
             return false;
         }
 
+        int originalSecondNumber = secondNumber;
         boolean matchFound = false;
         while (firstNumber > 0) {
 
             int firstNumberDigit = firstNumber % 10;
 
+            secondNumber = originalSecondNumber;
             while (secondNumber > 0) {
 
                 if (firstNumberDigit == (secondNumber % 10)) {
